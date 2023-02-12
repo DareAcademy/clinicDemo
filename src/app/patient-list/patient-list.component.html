@@ -1,0 +1,41 @@
+<div class="row" style="margin-top: 10px;">
+    <div class="col-xs-1">
+        <span>Name</span>
+    </div>
+    <div class="col-xs-6">
+        <input type="text" class="form-control" #txtSearchName  />
+    </div>
+    <div class="col-xs-2">
+        <input type="button" (click)="onSearch()" value="Search" class="btn btn-primary" />
+    </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+    <div class="col-xs-12">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of liPatient">
+                    <td>
+                        <img [src]="item.path" style="width:100px;" />
+                    </td>
+                    <td>{{item.firstName}} {{item.lastName}}</td>
+                    <td>{{item.country.name}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>
+                        <a (click)="onEdit(item.id)">Edit</a>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

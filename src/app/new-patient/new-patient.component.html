@@ -1,0 +1,62 @@
+<form #f="ngForm" >
+<div class="row" style="margin-top:10px">
+    <div class="col-xs-1">
+        <span>First Name</span>
+    </div>
+    <div class="col-xs-6">
+        <input type="text" ngModel name="txtFirstName" class="form-control" />
+    </div>
+</div>
+<div class="row" style="margin-top:10px">
+    <div class="col-xs-1">
+        <span>Last Name</span>
+    </div>
+    <div class="col-xs-6">
+        <input type="text" class="form-control" ngModel name="txtLastName" />
+    </div>
+</div>
+<div class="row" style="margin-top:10px">
+    <div class="col-xs-1">
+        <span>Phone</span>
+    </div>
+    <div class="col-xs-6">
+        <input type="text" class="form-control" ngModel name="txtPhone" />
+    </div>
+</div>
+<div class="row" style="margin-top:10px">
+    <div class="col-xs-1">
+        <span>BDate</span>
+    </div>
+    <div class="col-xs-6">
+        <input type="date" class="form-control" ngModel name="txtBDate" />
+    </div>
+</div>
+<div class="row" style="margin-top:10px">
+    <div class="col-xs-1">
+        <span>Country</span>
+    </div>
+    <div class="col-xs-6">
+        <select class="form-control" ngModel name="ddlCountry" >
+            <option *ngFor="let item of licountry" [value]="item.id" > {{item.name}}</option>
+
+        </select>
+    </div>
+</div>
+<div class="row" style="margin-top:10px">
+    <div class="col-xs-1">
+        <span>Profile Picture</span>
+    </div>
+
+    <div class="col-xs-6">
+        <label for="fu1" class="btn btn-primary">Upload</label>
+        <input type="file" id="fu1" (change)="onSelectFile($event)" style="display:none" />
+    </div>
+
+</div>
+<div class="row" style="margin-top:10px">
+    
+    <div class="col-xs-7" style="text-align: right;">
+        <input type="button" value="Save" class="btn btn-primary" (click)="onSave()">
+    </div>
+</div>
+</form>
